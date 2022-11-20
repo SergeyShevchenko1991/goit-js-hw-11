@@ -37,7 +37,7 @@ loadMore.addEventListener('click', async function () {
   page++;
   const res = await fetchImages(searchQuery, page);
   if (!res) return;
-  if (res.hits.length) renderGallery(res.hits);
+  if (res.hits.length) renderGallery(res.hits, false);
   const lastPage = isLastPage(res.totalHits, res.hits);
   changePaginationDisplay(res.hits, res.totalHits);
   lightbox.refresh();
@@ -55,13 +55,13 @@ function changePaginationDisplay(hits, totalHits) {
   }
 }
 
-function renderGallery(images) {
+function renderGallery(images, shouldReplace = true) {
   let fragment = '';
   for (const image of images) {
     fragment += createPreviewHtml(image);
   }
-  gallery.innerHTML = '';
-  gallery.insertAdjacentHTML('afterbegin', fragment);
+  if (shouldReplace) gallery.innerHTML = '';
+  gallery.insertAdjacentHTML('beforeend', fragment);
 }
 
 function createPreviewHtml(image) {
