@@ -1,0 +1,39 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.load-more {
+  display: none;
+  all: unset;
+  position: fixed;
+  bottom: 0;
+  padding: 0.5rem 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #00ff92;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 2px;
+
+  &.is-active {
+    display: inline-block;
+  }
+}
+
+.photo-card {
+  display: flex;
+  flex-direction: column;
+}
+.info {
+  display: flex;
+  justify-content: space-between;
+  gap: 0 8px;
+  margin-top: auto;
+  color: black;
+}

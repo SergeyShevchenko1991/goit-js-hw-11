@@ -1,0 +1,36 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #00ff92;
+
+  input {
+    width: 100%;
+    border: none;
+    border-radius: 2px;
+    padding: 0.5rem;
+    padding-right: 40px;
+  }
+}
+
+.inner {
+  position: relative;
+  width: 320px;
+}
+.submit {
+  all: unset;
+  position: absolute;
+  width: 34px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: url(../images/search.svg) no-repeat center;
+  background-size: 26px 26px;
+}
